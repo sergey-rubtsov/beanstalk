@@ -6106,7 +6106,7 @@ html {
  */
 
 .toggle-menu {
-    background: url("menu.png") no-repeat scroll center center #000000;
+    background: url("../img/menu.png") no-repeat scroll center center #000000;
     display: block;
     height: 20px;
     opacity: 0.1;
