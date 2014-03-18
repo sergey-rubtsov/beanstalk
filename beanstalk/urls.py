@@ -14,7 +14,8 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', RedirectView.as_view(url='/blog/')),
+    #url(r'^$', RedirectView.as_view(url='/blog/')),
+    url(r'^$', 'altair.views.home', name='home'),
 
     url(r'^', include('zinnia.urls.capabilities')),
     url(r'^search/', include('zinnia.urls.search')),
