@@ -1,6 +1,8 @@
 # coding: utf-8
 import os
 
+gettext = lambda s: s
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # Django settings for beanstalk project.
@@ -60,7 +62,7 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -90,6 +92,34 @@ STATICFILES_FINDERS = (
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = ''
 
+LANGUAGE_CODE = 'en'
+
+LANGUAGES = (
+    ('en', gettext('English')),
+    ('fr', gettext('French')),
+    ('de', gettext('German')),
+    ('es', gettext('Spanish')),
+    ('it', gettext('Italian')),
+    ('nl', gettext('Dutch')),
+    ('sl', gettext('Slovenian')),
+    ('bg', gettext('Bulgarian')),
+    ('hu', gettext('Hungarian')),
+    ('cs', gettext('Czech')),
+    ('sk', gettext('Slovak')),
+    ('lt', gettext('Lithuanian')),
+    ('ru', gettext('Russian')),
+    ('pl', gettext('Polish')),
+    ('eu', gettext('Basque')),
+    ('he', gettext('Hebrew')),
+    ('ca', gettext('Catalan')),
+    ('tr', gettext('Turkish')),
+    ('sv', gettext('Swedish')),
+    ('hr_HR', gettext('Croatian')),
+    ('pt_BR', gettext('Brazilian Portuguese')),
+    ('fi_FI', gettext('Finnish (Finland)')),
+    ('zh_CN', gettext('Simplified Chinese')),
+)
+
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
@@ -101,7 +131,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.admindocs.middleware.XViewMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -118,8 +150,18 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
+    'zinnia.context_processors.version',
+)
+
 INSTALLED_APPS = (
     'django.contrib.auth',
+    'django.contrib.sitemaps',
+    'django.contrib.comments',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
@@ -128,9 +170,15 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
-    'portfolio',
+    'django.contrib.admindocs',
+    'mptt',
+    'zinnia',
+    'tagging',
+    'django_xmlrpc',
 )
+
+from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
+XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
