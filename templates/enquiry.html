@@ -1,68 +1,84 @@
 {% extends "base.html" %}
-{% block content %}
 
-{% endblock %}
 {% block enquiry %}
 
-    <div style="float: left; width: 45%; margin: 10px;">
-        <form action="" enctype="multipart/form-data" class="formResponsive" id="userForm"
-              method="post">
+<div class="tm-block">
+            <section data-uk-grid-margin="" data-uk-grid-match="{target:'&gt; div &gt; .uk-panel'}"
+                     class="tm-bottom-c uk-grid">
+                <div class="uk-width-1-1">
+                    <div class="uk-panel footit">
 
-            <!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
-            <fieldset id="rsform_3_page_0" class="formHorizontal formContainer">
-                <div class="rsform-block rsform-block-name">
-                    <div class="formControlLabel">Full Name</div>
-                    <div class="formControls">
-                        <div class="formBody"><input type="text" class="rsform-input-box"
-                                                     id="name"
-                                                     name="form[name]" size="" value="">
-                        </div>
-                        <p class="formDescription"></p>
-                    </div>
-                </div>
-                <div class="rsform-block rsform-block-email">
-                    <div class="formControlLabel">Email Address</div>
-                    <div class="formControls">
-                        <div class="formBody"><input type="text" class="rsform-input-box"
-                                                     id="email"
-                                                     name="form[email]" size="30" value="">
-                        </div>
-                        <p class="formDescription"></p>
-                    </div>
-                </div>
-                <div class="rsform-block rsform-block-tel">
-                    <div class="formControlLabel">Telephone</div>
-                    <div class="formControls">
-                        <div class="formBody"><input type="text" class="rsform-input-box"
-                                                     id="tel"
-                                                     name="form[tel]" size="30" value="">
-                        </div>
-                        <p class="formDescription"></p>
-                    </div>
-                </div>
-                <div class="rsform-block rsform-block-com">
-                    <div class="formControlLabel">Message</div>
-                    <div class="formControls">
-                        <div class="formBody"><textarea class="rsform-text-box" id="com"
-                                                        name="form[com]" rows="4"
-                                                        cols="30"></textarea>
-                        </div>
-                        <p class="formDescription"></p>
-                    </div>
-                </div>
-                <div class="rsform-block rsform-block-send">
-                    <div class="formControlLabel"></div>
-                    <div class="formControls">
-                        <div class="formBody"><input type="submit" class="rsform-submit-button"
-                                                     id="send" name="form[send]"
-                                                     value="Submit Enquiry"><span
-                                class="formValidation"></span></div>
-                        <p class="formDescription"></p>
-                    </div>
-                </div>
-            </fieldset>
-            <input type="hidden" value="3" name="form[formId]"></form>
+                        <div style="float: left; width: 45%; margin: 10px;">
+                            <h3>Get in Touch</h3>
 
-    </div>
+                            <p><strong>Mobile:</strong> <a href="tel:+447974262110">Tel: 07974262110</a></p>
+
+                            <p><strong>Email:</strong> <a href="#">dart.moal@gmail.com</a></p>
+
+                        </div>
+                        <div style="float: left; width: 45%; margin: 10px;">
+                            <form action="" enctype="multipart/form-data" class="formResponsive" id="userForm"
+                                  method="post">
+
+                                <!-- Do not remove this ID, it is used to identify the page so that the pagination script can work correctly -->
+                                <fieldset id="rsform_3_page_0" class="formHorizontal formContainer">
+                                    <div class="rsform-block rsform-block-name">
+                                        <div class="formControlLabel">Full Name</div>
+                                        <div class="formControls">
+                                            <div class="formBody"><input type="text" class="rsform-input-box"
+                                                                         id="name"
+                                                                         name="form[name]" size="" value="">
+                                            </div>
+                                            <p class="formDescription"></p>
+                                        </div>
+                                    </div>
+                                    <div class="rsform-block rsform-block-email">
+                                        <div class="formControlLabel">Email Address</div>
+                                        <div class="formControls">
+                                            <div class="formBody"><input type="text" class="rsform-input-box"
+                                                                         id="email"
+                                                                         name="form[email]" size="30" value="">
+                                            </div>
+                                            <p class="formDescription"></p>
+                                        </div>
+                                    </div>
+                                    <div class="rsform-block rsform-block-tel">
+                                        <div class="formControlLabel">Telephone</div>
+                                        <div class="formControls">
+                                            <div class="formBody"><input type="text" class="rsform-input-box"
+                                                                         id="tel"
+                                                                         name="form[tel]" size="30" value="">
+                                            </div>
+                                            <p class="formDescription"></p>
+                                        </div>
+                                    </div>
+                                    <div class="rsform-block rsform-block-com">
+                                        <div class="formControlLabel">Message</div>
+                                        <div class="formControls">
+                                            <div class="formBody"><textarea class="rsform-text-box" id="com"
+                                                                            name="form[com]" rows="4"
+                                                                            cols="30"></textarea>
+                                            </div>
+                                            <p class="formDescription"></p>
+                                        </div>
+                                    </div>
+                                    <div class="rsform-block rsform-block-send">
+                                        <div class="formControlLabel"></div>
+                                        <div class="formControls">
+                                            <div class="formBody"><input type="submit" class="rsform-submit-button"
+                                                                         id="send" name="form[send]"
+                                                                         value="Submit Enquiry"><span
+                                                    class="formValidation"></span></div>
+                                            <p class="formDescription"></p>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                                <input type="hidden" value="3" name="form[formId]"></form>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
 
 {% endblock %}

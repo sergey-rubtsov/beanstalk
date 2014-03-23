@@ -3,19 +3,22 @@ from django.contrib import admin
 from django.conf.urls import url
 from django.conf.urls import include
 from django.conf.urls import patterns
+
 from django.views.generic.base import RedirectView
+from home.views import *
 
 from zinnia.sitemaps import TagSitemap
 from zinnia.sitemaps import EntrySitemap
 from zinnia.sitemaps import CategorySitemap
 from zinnia.sitemaps import AuthorSitemap
 
+
 admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    #url(r'^$', RedirectView.as_view(url='/blog/')),
-    url(r'^$', 'altair.views.home', name='home'),
+    # url(r'^$', RedirectView.as_view(url='/home/')),
+    url(r'^home/', HomeView.as_view(), name='home'),
 
     url(r'^', include('zinnia.urls.capabilities')),
     url(r'^search/', include('zinnia.urls.search')),
@@ -44,10 +47,6 @@ urlpatterns = patterns(
     # url(r'^$', 'beanstalk.views.home', name='home'),
     # url(r'^beanstalk/', include('beanstalk.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
 )
