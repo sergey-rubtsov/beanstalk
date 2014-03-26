@@ -59,3 +59,8 @@
     margin-left: 60px;
     z-index: -1;
 }
+
+.enq-form {
+    padding-bottom: 6px;
+    padding-top: 6px;
+}

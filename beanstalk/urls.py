@@ -19,6 +19,7 @@ urlpatterns = patterns(
     '',
     url(r'^$', RedirectView.as_view(url='/home/')),
     url(r'^home/', HomeView.as_view(), name='home'),
+    url(r'^enquiry/', new_enquiry, name='enquiry'),
 
     url(r'^', include('zinnia.urls.capabilities')),
     url(r'^search/', include('zinnia.urls.search')),
