@@ -174,7 +174,10 @@ INSTALLED_APPS = (
     'tagging',
     'django_xmlrpc',
     'home',
+    'contact',
 )
+
+DEFAULT_FROM_EMAIL='some@some.com'
 
 from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
 XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS

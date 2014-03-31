@@ -1454,7 +1454,8 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-navbar {
     background: #5A3D31;
     color: #E5EDB8;
-    padding: 35px;
+    padding-top: 35px;
+    padding-bottom: 35px;
 }
 
 .uk-navbar:before,
@@ -1468,7 +1469,10 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 }
 
 .uk-navbar-nav {
-    margin: 0;
+    margin-right: 10px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 0;
     padding: 0;
     list-style: none;
     float: left;
@@ -5592,7 +5596,11 @@ h6 {
 
 .uk-navbar-brand {
     height: 61px;
-    margin: -35px 35px -35px -35px;
+    margin-left: 0px;
+    margin-right: -35px;
+    margin-top: -35px;
+    margin-bottom: -35px;
+
     padding: 10px;
 }
 

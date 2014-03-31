@@ -1,0 +1,9 @@
+{% extends "home.html" %}
+{% block content %}
+{% block home_main_column %}
+<form id="contact" action="{% url 'submit' %}" method="post">{% csrf_token %}
+    {{ contact_form.as_p }}
+    <input type="submit" value="Submit" onclick="">
+</form>
+{% endblock %}
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends "enquiry.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
@@ -6,10 +6,9 @@
 
         <div data-uk-grid-margin="" data-uk-grid-match="" class="uk-grid">
 
+            {% block home_main_column %}
             <div class="tm-main tm-bottom uk-width-medium-4-5" style="min-height: 760px;">
-
                 <main class="tm-content">
-
                     <div class="uk-grid ">
                         <div class="uk-width-1-1">
                             <article class="uk-article">
@@ -49,23 +48,19 @@
                             </article>
                         </div>
                     </div>
-
                 </main>
-
             </div>
+            {% endblock %}
 
+            {% block home_aside %}
             <aside class="tm-sidebar-b uk-width-medium-1-5" style="min-height: 760px;">
-
                 <div style="overflow: hidden;">
-
                     <div class="scroll-pane jspScrollable" style="overflow: hidden; padding: 0px; width: 100%;"
                          tabindex="0">
-
                     </div>
-
                 </div>
-
             </aside>
+            {% endblock %}
 
         </div>
 

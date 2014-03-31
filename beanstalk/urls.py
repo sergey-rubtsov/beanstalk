@@ -12,14 +12,14 @@ from zinnia.sitemaps import EntrySitemap
 from zinnia.sitemaps import CategorySitemap
 from zinnia.sitemaps import AuthorSitemap
 
-
 admin.autodiscover()
 
 urlpatterns = patterns(
     '',
     url(r'^$', RedirectView.as_view(url='/home/')),
     url(r'^home/', HomeView.as_view(), name='home'),
-    url(r'^enquiry/', new_enquiry, name='enquiry'),
+
+    url(r'^contact/', include('contact.urls')),
 
     url(r'^', include('zinnia.urls.capabilities')),
     url(r'^search/', include('zinnia.urls.search')),
@@ -42,14 +42,7 @@ urlpatterns = patterns(
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     #url(r'^weblog/', include('zinnia.urls')),
-    #url(r'^comments/', include('django.contrib.comments.urls')),
-
-    # Examples:
-    # url(r'^$', 'beanstalk.views.home', name='home'),
-    # url(r'^beanstalk/', include('beanstalk.foo.urls')),
-
     url(r'^admin/', include(admin.site.urls)),
-
 )
 
 sitemaps = {
