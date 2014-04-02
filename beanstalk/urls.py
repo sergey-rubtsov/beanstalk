@@ -16,8 +16,8 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', RedirectView.as_view(url='/home/')),
-    url(r'^home/', HomeView.as_view(), name='home'),
+    url(r'^$', RedirectView.as_view(url='/contact/')),
+    url(r'^home/', HomeView.as_view(form_class=ContactForm), name='home'),
 
     url(r'^contact/', include('contact.urls')),
 

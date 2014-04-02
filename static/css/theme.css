@@ -4924,7 +4924,7 @@ input.uk-search-field {
     color: #F26E32 !important
 }
 
-.formResponsive textarea, .formResponsive input[type="text"], .formResponsive input[type="password"] {
+.formResponsive textarea, .formResponsive input[type="text"], .formResponsive input[type="email"] {
     width: 100%
 }
 

@@ -1,0 +1,30 @@
+{% block bottom_contact %}
+
+    <div class="uk-container uk-container-center contact-back">
+
+        <div class="tm-block">
+            <section class="tm-bottom-c uk-grid" data-uk-grid-match="{target:'&gt; div &gt; .uk-panel'}"
+                     data-uk-grid-margin="">
+                <div class="uk-width-1-1">
+                    <div class="uk-panel footit">
+
+                        <div style="float: left; width: 45%; margin: 10px;">
+                            <h3>Get in Touch</h3>
+
+                            <p><strong>Mobile:</strong> <a href="tel:+447974262110">Tel: 07974262110</a></p>
+
+                            <p><strong>Email:</strong> <a href="#">dart.moal@gmail.com</a></p>
+
+                        </div>
+                        <div style="float: left; width: 45%; margin: 10px;">
+
+                        {% include "contact_form.html" %}
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+{% endblock %}

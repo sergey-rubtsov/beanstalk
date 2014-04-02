@@ -1,9 +1,32 @@
-{% extends "home.html" %}
-{% block content %}
-{% block home_main_column %}
-<form id="contact" action="{% url 'submit' %}" method="post">{% csrf_token %}
-    {{ contact_form.as_p }}
-    <input type="submit" value="Submit" onclick="">
-</form>
-{% endblock %}
+{% block contact_form %}
+    <form method="post" id="userForm" class="formResponsive">
+        {% csrf_token %}
+        <fieldset id="" class="formHorizontal formContainer">
+            <div class="rsform-block">
+                {% for field in contact_form %}
+                    <div class="formControlLabel">{{ field.label_tag }}</div>
+                    <div class="formControls">
+                        <div class="formBody">
+                            {{ field.errors }}
+                            {{ field }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </fieldset>
+        <div class="rsform-block rsform-block-send">
+            <div class="formControlLabel"></div>
+            <div class="rsform-block rsform-block-send">
+                <div class="formControlLabel"></div>
+                <div class="formControls">
+                    <div class="formBody"><input id="send" type="submit" value="Submit"
+                                                 class="rsform-submit-button"
+                                                 onclick=""><span
+                            class="formValidation"></span></div>
+                    <p class="formDescription"></p>
+                </div>
+            </div>
+
+        </div>
+    </form>
 {% endblock %}

@@ -4,9 +4,8 @@ from django.db import models
 class Contact(models.Model):
     contact_name = models.CharField(max_length=25)
     contact_email = models.EmailField()
-    telephone_number = models.CharField(max_length=15, validators=[MinLengthValidator(7),
-                                                                 validate_integer])
-    message = models.TextField()
+    telephone_number = models.CharField(max_length=20, validators=[MinLengthValidator(7)])
+    message = models.TextField(max_length=5000)
     post_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:

@@ -1,11 +1,7 @@
 {% extends "base.html" %}
-
 {% block content %}
-
     <div class="uk-container uk-container-center">
-
         <div data-uk-grid-margin="" data-uk-grid-match="" class="uk-grid">
-
             {% block home_main_column %}
             <div class="tm-main tm-bottom uk-width-medium-4-5" style="min-height: 760px;">
                 <main class="tm-content">
@@ -61,8 +57,10 @@
                 </div>
             </aside>
             {% endblock %}
-
         </div>
-
     </div>
+{% endblock %}
+
+{% block bottom_contact %}
+    {%include "bottom_contact.html" %}
 {% endblock %}
