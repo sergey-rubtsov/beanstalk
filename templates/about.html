@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block about_navactive %}navactive{% endblock %}
+{% block main %}
+      <header class="grid col-full">
+        <hr>
+        <p class="fleft">About</p>
+      </header>
+    <h1>{{ MainPageInfo.topic }}</h1>
+    {{ MainPageInfo.message }}
+{% endblock %}

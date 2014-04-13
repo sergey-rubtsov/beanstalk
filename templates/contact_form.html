@@ -2,17 +2,19 @@
     <form method="post" id="userForm" class="formResponsive">
         {% csrf_token %}
         <fieldset id="" class="formHorizontal formContainer">
-            <div class="rsform-block">
-                {% for field in contact_form %}
+
+            {% for field in contact_form %}
+                <div class="form-block">
+                    <div class="error-block">{{ field.errors }}</div>
                     <div class="formControlLabel">{{ field.label_tag }}</div>
                     <div class="formControls">
                         <div class="formBody">
-                            {{ field.errors }}
                             {{ field }}
                         </div>
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
+
         </fieldset>
         <div class="rsform-block rsform-block-send">
             <div class="formControlLabel"></div>

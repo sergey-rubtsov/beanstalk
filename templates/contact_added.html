@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
     {% block home_main_column %}
-    <p>Dear {{ contact.contact_name }}</p>
-    <p>Thank you for your enquiry today. A member of staff is now dealing with your email and we will be in touch shortly.</p>
-    <p>Best regards.</p>
+        <div class="contact-added">
+            <p>Dear {{ contact.contact_name }}</p>
+            <p>Thank you for your enquiry today. A member of staff is now dealing with your email and we will be in
+                touch shortly.</p>
+            <p>Best regards.</p>
+        </div>
     {% endblock %}
-    {% block home_aside %}
-    {% endblock %}
+{% endblock %}
+{% block bottom_contact %}
+    {% include "get_in_touch.html" %}
 {% endblock %}

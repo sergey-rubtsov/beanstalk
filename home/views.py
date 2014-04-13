@@ -1,10 +1,12 @@
 from django.views.generic.edit import FormView, CreateView
+from django.views.generic.base import View
 from contact.forms import ContactForm
 from contact.models import Contact
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from django.core.mail import send_mail
 from django.conf import settings
+from home.models import MainPageInfo
 
 
 class HomeView(CreateView):
@@ -36,3 +38,8 @@ class HomeView(CreateView):
         else:
             contact_form = ContactForm()
         return render_to_response(self.template_name, locals(), context_instance = RequestContext( request ))
+
+class About(View):
+#    model = MainPageInfo
+#    queryset = MainPageInfo.objects.latest('post_date')
+    template_name = "about.html"

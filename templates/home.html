@@ -1,64 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class="uk-container uk-container-center">
+
         <div data-uk-grid-margin="" data-uk-grid-match="" class="uk-grid">
-            {% block home_main_column %}
-            <div class="tm-main tm-bottom uk-width-medium-4-5" style="min-height: 760px;">
-                <main class="tm-content">
-                    <div class="uk-grid ">
-                        <div class="uk-width-1-1">
-                            <article class="uk-article">
-                                <h1 class="uk-article-title">
-                                    Hello &amp; Hello
-                                </h1>
 
-                                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in ligula id sem
-                                    tristique ultrices eget id neque. Duis enim turpis, tempus at accumsan vitae,
-                                    lobortis id sapien. Pellentesque nec orci mi, in pharetra ligula. Nulla
-                                    facilisi. Nulla facilisi. Mauris convallis venenatis massa, quis consectetur
-                                    felis ornare quis. Sed aliquet nunc ac ante molestie ultricies. Nam pulvinar
-                                    ultricies bibendum. Vivamus diam leo, faucibus et vehicula eu, molestie sit amet
-                                    dui. Proin nec orci et elit semper ultrices. Cum sociis natoque penatibus et
-                                    magnis dis parturient montes, nascetur ridiculus mus. Sed quis urna mi, ac
-                                    dignissim mauris. Quisque mollis ornare mauris, sed laoreet diam malesuada quis.
-                                    Proin vel elementum ante. Donec hendrerit arcu ac odio tincidunt posuere.
-                                    Vestibulum nec risus eu lacus semper viverra.
+            {% include "main_home.html" %}
+            {% include "bean.html" %}
 
-                                    Vestibulum dictum consectetur magna eu egestas. Praesent molestie dapibus erat,
-                                    sit amet sodales lectus congue ut. Nam adipiscing, tortor ac blandit egestas,
-                                    lorem ligula posuere ipsum, nec faucibus nisl enim eu purus. Quisque bibendum
-                                    diam quis nunc eleifend at molestie libero tincidunt. Quisque tincidunt sapien a
-                                    sapien pellentesque consequat. Mauris adipiscing venenatis augue ut tempor.
-                                    Donec auctor mattis quam quis aliquam. Nullam ultrices erat in dolor pharetra
-                                    bibendum. Suspendisse eget odio ut libero imperdiet rhoncus. Curabitur aliquet,
-                                    ipsum sit amet aliquet varius, est urna ullamcorper magna, sed eleifend libero
-                                    nunc non erat. Vivamus semper turpis ac turpis volutpat non cursus velit
-                                    aliquam. Fusce id tortor id sapien porta egestas. Nulla venenatis luctus libero
-                                    et suscipit. Sed sed purus risus. Donec auctor, leo nec eleifend vehicula, lacus
-                                    felis sollicitudin est, vitae lacinia lectus urna nec libero. Aliquam
-                                    pellentesque, arcu condimentum pharetra vestibulum, lectus felis malesuada
-                                    felis, vel fringilla dolor dui tempus nisi. In hac habitasse platea dictumst. Ut
-                                    imperdiet mauris vitae eros varius eget accumsan lectus adipiscing.
-
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </main>
-            </div>
-            {% endblock %}
-
-            {% block home_aside %}
-            <aside class="tm-sidebar-b uk-width-medium-1-5" style="min-height: 760px;">
-                <div style="overflow: hidden;">
-                    <div class="scroll-pane jspScrollable" style="overflow: hidden; padding: 0px; width: 100%;"
-                         tabindex="0">
-                    </div>
-                </div>
-            </aside>
-            {% endblock %}
         </div>
-    </div>
+
 {% endblock %}
 
 {% block bottom_contact %}

@@ -5,6 +5,7 @@ from django.conf.urls import include
 from django.conf.urls import patterns
 
 from django.views.generic.base import RedirectView
+from beanstalk.sitemaps import Sitemap
 from home.views import *
 
 from zinnia.sitemaps import TagSitemap
@@ -16,14 +17,14 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', RedirectView.as_view(url='/contact/')),
+    url(r'^$', RedirectView.as_view(url='/home/')),
     url(r'^home/', HomeView.as_view(form_class=ContactForm), name='home'),
 
     url(r'^contact/', include('contact.urls')),
 
     url(r'^', include('zinnia.urls.capabilities')),
     url(r'^search/', include('zinnia.urls.search')),
-    url(r'^sitemap/', include('zinnia.urls.sitemap')),
+
     url(r'^trackback/', include('zinnia.urls.trackback')),
     url(r'^blog/tags/', include('zinnia.urls.tags')),
     url(r'^blog/feeds/', include('zinnia.urls.feeds')),
@@ -35,6 +36,7 @@ urlpatterns = patterns(
     url(r'^blog/', include('zinnia.urls.archives')),
     url(r'^blog/', include('zinnia.urls.shortlink')),
     url(r'^blog/', include('zinnia.urls.quick_entry')),
+    url(r'^sitemap/', include('zinnia.urls.sitemap')),
 
     url(r'^comments/', include('django.contrib.comments.urls')),
     url(r'^xmlrpc/$', 'django_xmlrpc.views.handle_xmlrpc'),
@@ -46,6 +48,7 @@ urlpatterns = patterns(
 )
 
 sitemaps = {
+    'static' : Sitemap(['home','contact']),
     'tags': TagSitemap,
     'blog': EntrySitemap,
     'authors': AuthorSitemap,

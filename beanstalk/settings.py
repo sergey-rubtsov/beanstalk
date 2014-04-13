@@ -11,7 +11,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+     #('Serg', 'your_email@example.com'),
 )
 
 MANAGERS = ADMINS
@@ -145,7 +145,6 @@ ROOT_URLCONF = 'beanstalk.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'beanstalk.wsgi.application'
 
-import os
 TEMPLATE_DIRS = (os.path.join(os.path.dirname(__file__), '..', 'templates').replace('\\','/'),)
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -181,6 +180,11 @@ DEFAULT_FROM_EMAIL='some@some.com'
 
 from zinnia.xmlrpc import ZINNIA_XMLRPC_METHODS
 XMLRPC_METHODS = ZINNIA_XMLRPC_METHODS
+
+AUTO_MODERATE_COMMENTS = False
+MAIL_COMMENT_AUTHORS = False
+MAIL_COMMENT_NOTIFICATION_RECIPIENTS = False
+MAIL_COMMENT_AUTHORS = False
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
