@@ -6,5 +6,5 @@ from forms import ContactForm
 from home.views import HomeView
 
 class ContactView(HomeView):
-    template_name = "contact.html"
+    template_name = "contact_temp.html"
     form_class = ContactForm
