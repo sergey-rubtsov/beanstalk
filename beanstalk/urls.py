@@ -7,6 +7,7 @@ from django.conf.urls import patterns
 from django.views.generic.base import RedirectView
 from beanstalk.sitemaps import Sitemap
 from home.views import *
+from contact.views import *
 
 from zinnia.sitemaps import TagSitemap
 from zinnia.sitemaps import EntrySitemap
@@ -23,8 +24,12 @@ urlpatterns = patterns(
 
     url(r'^cv', CVView.as_view(), name='cv'),
 
-    url(r'^contact/', include('contact.urls')),
+    url(r'^contact/', ContactView.as_view(), name='contact'),
 
+    url(r'^blog/', include('zinnia.urls.entries')),
+    url(r'^blog/', include('zinnia.urls.archives')),
+    url(r'^blog/', include('zinnia.urls.shortlink')),
+    url(r'^blog/', include('zinnia.urls.quick_entry')),
     url(r'^', include('zinnia.urls.capabilities')),
     url(r'^search/', include('zinnia.urls.search')),
     url(r'^trackback/', include('zinnia.urls.trackback')),
@@ -34,10 +39,6 @@ urlpatterns = patterns(
     url(r'^blog/authors/', include('zinnia.urls.authors')),
     url(r'^blog/categories/', include('zinnia.urls.categories')),
     url(r'^blog/comments/', include('zinnia.urls.comments')),
-    url(r'^blog/', include('zinnia.urls.entries')),
-    url(r'^blog/', include('zinnia.urls.archives')),
-    url(r'^blog/', include('zinnia.urls.shortlink')),
-    url(r'^blog/', include('zinnia.urls.quick_entry')),
     url(r'^sitemap/', include('zinnia.urls.sitemap')),
 
     url(r'^comments/', include('django.contrib.comments.urls')),
