@@ -17,14 +17,16 @@ admin.autodiscover()
 
 urlpatterns = patterns(
     '',
-    url(r'^$', RedirectView.as_view(url='/home/')),
-    url(r'^home/', HomeView.as_view(form_class=ContactForm), name='home'),
+    url(r'^$', RedirectView.as_view(url='/about/')),
+
+    url(r'^about', AboutView.as_view(), name='about'),
+
+    url(r'^cv', CVView.as_view(), name='cv'),
 
     url(r'^contact/', include('contact.urls')),
 
     url(r'^', include('zinnia.urls.capabilities')),
     url(r'^search/', include('zinnia.urls.search')),
-
     url(r'^trackback/', include('zinnia.urls.trackback')),
     url(r'^blog/tags/', include('zinnia.urls.tags')),
     url(r'^blog/feeds/', include('zinnia.urls.feeds')),
@@ -43,7 +45,6 @@ urlpatterns = patterns(
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    #url(r'^weblog/', include('zinnia.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

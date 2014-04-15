@@ -1,45 +1,34 @@
-from django.views.generic.edit import FormView, CreateView
-from django.views.generic.base import View
-from contact.forms import ContactForm
-from contact.models import Contact
-from django.shortcuts import render_to_response
-from django.template.context import RequestContext
-from django.core.mail import send_mail
-from django.conf import settings
-from home.models import MainPageInfo
+from django.views.generic import DetailView
+from django.http import Http404
+from home.models import About, Cv
 
-
-class HomeView(CreateView):
-    template_name = "home.html"
-    success_url = None
-
-    def get(self, request):
-        contact_form = ContactForm()
-        return render_to_response(self.template_name, locals(), context_instance = RequestContext( request ))
-
-    def post(self, request):
-        if request.method == 'POST':
-            contact_form = ContactForm(request.POST)
-            if contact_form.is_valid():
-                new_contact = contact_form.save()
-                # send_mail(
-                #     'Feedback Submitted',
-                #     'Thanks for submitting your suggestion.',
-                #     settings.DEFAULT_FROM_EMAIL,
-                #     [new_contact.contact_email],
-                # )
-                return render_to_response('contact_added.html',
-                              {'contact': new_contact},
-                              RequestContext(request))
-            else:
-                error_fields = contact_form.errors.keys()
-                for each_field in error_fields:
-                    contact_form.fields[each_field].widget.attrs['class'] = 'textbox_error'
-        else:
-            contact_form = ContactForm()
-        return render_to_response(self.template_name, locals(), context_instance = RequestContext( request ))
-
-class About(View):
-#    model = MainPageInfo
-#    queryset = MainPageInfo.objects.latest('post_date')
+class AboutView(DetailView):
+    model = About
     template_name = "about.html"
+    context_object_name = 'about'
+
+    def get_object(self):
+        try:
+            queryset = self.model.objects.latest('post_date')
+        except self.model.DoesNotExist:
+            return self.get_empty_about
+        except self.model.MultipleObjectsReturned:
+            raise Http404
+        return queryset
+
+    def get_empty_about(self):
+        result = self.model
+        result.topic = "Empty"
+        result.message = "Empty"
+        return result
+
+class CVView(AboutView):
+    model = Cv
+    template_name = "cv.html"
+    context_object_name = 'cv'
+
+    def get_empty_about(self):
+        result = self.model
+        result.title = "Empty"
+        result.info = "Empty"
+        return result

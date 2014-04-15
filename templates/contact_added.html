@@ -1,14 +1,33 @@
-{% extends "base.html" %}
-{% block content %}
-    {% block home_main_column %}
-        <div class="contact-added">
-            <p>Dear {{ contact.contact_name }}</p>
-            <p>Thank you for your enquiry today. A member of staff is now dealing with your email and we will be in
+{% extends "index.html" %}
+{% block contact_navactive %}navactive{% endblock %}
+{% block main %}
+  <div class="contact-page main grid-wrap">
+    <header class="grid col-full">
+      <hr>
+      <p class="fleft">Contact</p>
+    </header>
+    <aside class="grid col-one-quarter mq2-col-one-third mq3-col-full">
+      <p class="mbottom">I would love to talk to you and answer all of your questions</p>
+      <address class="mbottom">
+      <h5>Sergey Rubtsov </h5>
+      Belgrade <br >
+      Serbia <br >
+      <a href="#">Get directions</a>
+      </address>
+      <p class="mbottom"> +381 11 787 15 01<br >
+        011 / 787 15 01</p>
+      <p class="mbottom"> <a href="#">sergey.rubtsov81@gmail.com</a><br >
+        <a href="#">Sergey Rubtsov on LinkedIn</a><br >
+      <p>
+      <h6>Get in Touch!</h6>
+       <br >
+      <p></p>
+    </aside>
+    <section class="grid col-three-quarters mq2-col-two-thirds mq3-col-full">
+      <h2>Dear {{ contact.contact_name }}</h2>
+                    <p>Thank you for your enquiry today. A member of staff is now dealing with your email and we will be in
                 touch shortly.</p>
             <p>Best regards.</p>
-        </div>
-    {% endblock %}
-{% endblock %}
-{% block bottom_contact %}
-    {% include "get_in_touch.html" %}
+    </section>
+  </div>
 {% endblock %}

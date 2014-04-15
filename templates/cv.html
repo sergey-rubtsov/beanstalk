@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block cv_navactive %}navactive{% endblock %}
+{% block main %}
+      <header class="grid col-full">
+        <hr>
+        <p class="fleft">Curriculum vitae</p>
+      </header>
+    <h1>{{ cv.title }}</h1>
+    {{ cv.info }}
+{% endblock %}

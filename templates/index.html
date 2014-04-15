@@ -21,8 +21,8 @@
   <header id="navtop"> <a href="index.html" class="logo fleft"> <img src="img/logo.png" alt=""> </a>
     <nav class="fright">
       <ul>
-        <li><a href="" class="{% block about_navactive %}{% endblock %}">About</a></li>
-        <li><a href="" class="{% block cv_navactive %}{% endblock %}">CV</a></li>
+        <li><a href="{% url 'about' %}" class="{% block about_navactive %}{% endblock %}">About</a></li>
+        <li><a href="{% url 'cv' %}" class="{% block cv_navactive %}{% endblock %}">CV</a></li>
       </ul>
       <ul>
         <li><a href="{% url 'zinnia_entry_archive_index' %}" class="{% block blog_navactive %}{% endblock %}">Blog</a></li>
