@@ -1,2 +1,2 @@
-beanstalk is my site
+The template of personal site on Django
 =========
